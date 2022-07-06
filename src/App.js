@@ -18,21 +18,24 @@ function App() {
       <BrowserRouter>
         <UserStorage>
           <Header />
-          <Routes>
-            <Route path="/" element={<Home />}></Route>
-            <Route path="login/*" element={<Login />}></Route>
-            <Route
-              path="conta/*"
-              element={
-                <ProtectedRoute>
-                  <User />
-                </ProtectedRoute>
-              }
-            ></Route>
-            <Route path="foto/:id" element={<Photo />}></Route>
-            <Route path="perfil/:user" element={<UserProfile />}></Route>
-            <Route path="/*" element={<NotFound />}></Route>
-          </Routes>
+          <main className="AppBody">
+            <Routes>
+              <Route path="/" element={<Home />}></Route>
+              <Route path="login/*" element={<Login />}></Route>
+              <Route
+                path="conta/*"
+                element={
+                  <ProtectedRoute>
+                    <User />
+                  </ProtectedRoute>
+                }
+              ></Route>
+              <Route path="foto/:id" element={<Photo />}></Route>
+              <Route path="perfil/:user" element={<UserProfile />}></Route>
+              <Route path="/*" element={<NotFound />}></Route>
+            </Routes>
+          </main>
+
           <Footer />
         </UserStorage>
       </BrowserRouter>
